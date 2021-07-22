@@ -1,0 +1,153 @@
+import React, { Fragment, useState } from 'react';
+import agent from '../api/agent';
+
+const CalculatorWithDropdown = () => {
+  const [result, setResult] = useState('');
+  const handleClick = (e) => {
+    setResult(result.concat(e.target.name));
+  };
+  const clear = () => {
+    setResult('');
+  };
+  const backSpace = () => {
+    setResult(result.slice(0, -1));
+  };
+  const calculate = () => {
+    const values = result;
+    try {
+      const total = eval(result).toString();
+        
+        agent.Calculation.add({ values }).then((response) => {
+          console.log(response);
+          setResult(response);
+        });
+      
+    } catch {
+      setResult('Error');
+    }
+  };
+  return (
+    <Fragment>
+      <div className='container'>
+        <div className='row p-2'>
+          <div className='col-lg-4 col-md-2'></div>
+          <div className='col-lg-3 col-md-8 calculator-div'>
+            <form>
+              <input type='text' value={result} />
+            </form>
+            <div className='keypad'>
+              <button className='hightlight' onClick={clear} id='clear'>
+                Clear
+              </button>
+              <button className='hightlight' onClick={backSpace} id='backspace'>
+                C
+              </button>
+
+              <div className='dropdown w-70'>
+                <button
+                  className='btn btn-warning dropdown-toggle'
+                  type='button'
+                  id='dropdownMenuButton1'
+                  data-bs-toggle='dropdown'
+                  aria-expanded='false'
+                >
+                  Opertators
+                </button>
+                <ul
+                  className='dropdown-menu'
+                  aria-labelledby='dropdownMenuButton1'
+                >
+                  <li>
+                    <button
+                      className='dropdown-btn hightlight'
+                      name='+'
+                      onClick={handleClick}
+                    >
+                      +
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className='dropdown-btn hightlight'
+                      name='-'
+                      onClick={handleClick}
+                    >
+                      -
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className='dropdown-btn hightlight'
+                      name='*'
+                      onClick={handleClick}
+                    >
+                      *
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className='dropdown-btn hightlight'
+                      name='/'
+                      onClick={handleClick}
+                    >
+                      /
+                    </button>
+                  </li>
+                </ul>
+              </div>
+
+              <button name='7' onClick={handleClick}>
+                7
+              </button>
+              <button name='8' onClick={handleClick}>
+                8
+              </button>
+              <button name='9' onClick={handleClick}>
+                9
+              </button>
+
+              <div></div>
+
+              <button name='4' onClick={handleClick}>
+                4
+              </button>
+              <button name='5' onClick={handleClick}>
+                5
+              </button>
+              <button name='6' onClick={handleClick}>
+                6
+              </button>
+
+              <div></div>
+
+              <button name='1' onClick={handleClick}>
+                1
+              </button>
+              <button name='2' onClick={handleClick}>
+                2
+              </button>
+              <button name='3' onClick={handleClick}>
+                3
+              </button>
+
+              <div></div>
+
+              <button name='0' onClick={handleClick}>
+                0
+              </button>
+              <button name='.' onClick={handleClick}>
+                .
+              </button>
+              <button className='hightlight' onClick={calculate} id='equal'>
+                =
+              </button>
+            </div>
+          </div>
+          <div className='col-lg-4 col-md-2'></div>
+        </div>
+      </div>
+    </Fragment>
+  );
+};
+
+export default CalculatorWithDropdown;

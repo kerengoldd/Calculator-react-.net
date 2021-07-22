@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{099C5FA1-48A1-4A68-9D7D-6927536621A7}|Default">
+  <MonoDevelop.Ide.ItemProperties.CalcAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CalcAPI/Program.cs">
+    <Files>
+      <File FileName="CalcAPI/appsettings.json" Line="10" Column="43" />
+      <File FileName="CalcAPI/Startup.cs" Line="1" Column="1" />
+      <File FileName="CalcAPI/Program.cs" Line="16" Column="1" />
+      <File FileName="CalcAPI/Data/DefaultContext.cs" />
+      <File FileName="CalcAPI/Controllers/CalculatorController.cs" />
+      <File FileName="CalcAPI/Properties/launchSettings.json" Line="7" Column="31" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CalcAPI" expanded="True">
+            <Node name="CalcAPI" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True">
+                  <Node name="SQLite" selected="True" />
+                </Node>
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Debugger.DebugSourceFolders>
+    <String>/Users/KerenGold/Desktop/calculator-full-stack 3</String>
+  </Debugger.DebugSourceFolders>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
